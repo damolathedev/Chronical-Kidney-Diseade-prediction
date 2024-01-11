@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKD Prediction</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- <script src="js/app.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Data for Prediction</h2>
+        <form action="/predict" method="post" >
+            <div class="form-group">
+                <label for="age">Age (in years):</label>
+                <input type="number" name="age" id="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="blood_pressure">Blood Pressure (mm/Hg):</label>
+                <input type="number" name="blood_pressure" id="blood_pressure" required>
+            </div>
+
+            <div class="form-group">
+                <label for="specific_gravity">Specific Gravity:</label>
+                <input type="" name="specific_gravity" id="specific_gravity" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="albumin">Albumin:</label>
+                <select name="albumin" id="albumin" required>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sugar">Sugar:</label>
+                <select name="sugar" id="sugar" required>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="red_blood_cells">Red Blood Cells:</label>
+                <select name="red_blood_cells" id="red_blood_cells" required>
+                    <option value="normal">Normal</option>
+                    <option value="abnormal">Abnormal</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pus_cell">Pus Cell:</label>
+                <select name="pus_cell" id="pus_cell" required>
+                    <option value="normal">Normal</option>
+                    <option value="abnormal">Abnormal</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pus_cell_clumps">Pus Cell Clumps:</label>
+                <select name="pus_cell_clumps" id="pus_cell_clumps" required>
+                    <option value="present">Present</option>
+                    <option value="notpresent">Not Present</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bacteria">Bacteria:</label>
+                <select name="bacteria" id="bacteria" required>
+                    <option value="present">Present</option>
+                    <option value="notpresent">Not Present</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="blood_glucose_random">Blood Glucose Random (mgs/dl):</label>
+                <input type="number" name="blood_glucose_random" id="blood_glucose_random" required>
+            </div>
+
+            <div class="form-group">
+                <label for="blood_urea">Blood Urea (mgs/dl):</label>
+                <input type="number" name="blood_urea" id="blood_urea" required>
+            </div>
+
+            <div class="form-group">
+                <label for="serum_creatinine">Serum Creatinine (mgs/dl):</label>
+                <input type="number" name="serum_creatinine" id="serum_creatinine" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sodium">Sodium (mEq/L):</label>
+                <input type="number" name="sodium" id="sodium" required>
+            </div>
+
+            <div class="form-group">
+                <label for="potassium">Potassium (mEq/L):</label>
+                <input type="number" name="potassium" id="potassium" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hemoglobin">Hemoglobin (gms):</label>
+                <input type="number" name="hemoglobin" id="hemoglobin" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="packed_cell_volume">Packed Cell Volume:</label>
+                <input type="number" name="packed_cell_volume" id="packed_cell_volume" required>
+            </div>
+
+            <div
+            <div class="form-group">
+                <label for="white_blood_cell_count">White Blood Cell Count (cells/cumm):</label>
+                <input type="number" name="white_blood_cell_count" id="white_blood_cell_count" required>
+            </div>
+
+            <div class="form-group">
+                <label for="red_blood_cell_count">Red Blood Cell Count (millions/cmm):</label>
+                <input type="number" name="red_blood_cell_count" id="red_blood_cell_count" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hypertension">Hypertension:</label>
+                <select name="hypertension" id="hypertension" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="diabetes_mellitus">Diabetes Mellitus:</label>
+                <select name="diabetes_mellitus" id="diabetes_mellitus" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="coronary_artery_disease">Coronary Artery Disease:</label>
+                <select name="coronary_artery_disease" id="coronary_artery_disease" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="appetite">Appetite:</label>
+                <select name="appetite" id="appetite" required>
+                    <option value="good">Good</option>
+                    <option value="poor">Poor</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pedal_edema">Pedal Edema:</label>
+                <select name="pedal_edema" id="pedal_edema" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ane">Anemia:</label>
+                <select name="ane" id="ane" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+            {% if prediction_result is defined %}
+                <div class="prediction-result {% if prediction_result == 'CKD' %} ckd-result {% endif %}">
+                    <p>Prediction Result: {{ prediction_result }}</p>
+                </div>
+            {% endif %}
+        
+            {% if error is defined %}
+                <div class="error-message">
+                    <p>Error: {{ error }}</p>
+                </div>
+            {% endif %}
+    </div>
+</body>
+</html>
